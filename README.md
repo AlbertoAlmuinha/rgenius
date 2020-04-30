@@ -12,7 +12,9 @@ status](https://travis-ci.org/AlbertoAlmuinha/rgenius.svg?branch=master)](https:
 <!-- badges: end -->
 
 > The purpose of this package is to provide an efficient method of
-> downloading song lyrics using the ‘genius’ API.
+> downloading song lyrics using the ‘genius’ API. For more information
+> visit the [pkgdown
+> website](https://albertoalmuinha.github.io/rgenius/).
 
 ## Installation
 

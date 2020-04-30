@@ -14,9 +14,6 @@ knitr::opts_chunk$set(
 
 library(xml2)
 library(knitr)
-library(kableExtra)
-
-Sys.setenv(GENIUS_API_TOKEN = 'j06gNlTF2KKmNyQjKW6gFrZe86dwUIKoML_ypqRNNRzyJl1fmZn75kawEUUhUVJW')
 ```
 
 
@@ -28,6 +25,7 @@ Sys.setenv(GENIUS_API_TOKEN = 'j06gNlTF2KKmNyQjKW6gFrZe86dwUIKoML_ypqRNNRzyJl1fm
 <!-- badges: end -->
 
 > The purpose of this package is to provide an efficient method of downloading song lyrics using the 'genius' API.
+  For more information visit the [pkgdown website](https://albertoalmuinha.github.io/rgenius/).
 
 ## Installation
 
