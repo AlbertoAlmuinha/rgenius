@@ -1,0 +1,144 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(xml2)
+library(knitr)
+library(kableExtra)
+
+Sys.setenv(GENIUS_API_TOKEN = 'j06gNlTF2KKmNyQjKW6gFrZe86dwUIKoML_ypqRNNRzyJl1fmZn75kawEUUhUVJW')
+```
+
+
+# rgenius <img src='man/figures/logo.png' align="right" height="139" />
+
+<!-- badges: start -->
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+<!-- badges: end -->
+
+> The purpose of this package is to provide an efficient method of downloading song lyrics using the 'genius' API.
+
+## Installation
+
+You can install the development version of `rgenius` from [Github](https://github.com/AlbertoAlmuinha/rgenius) with:
+
+``` r
+remotes::install_github('AlbertoAlmuinha/rgenius')
+```
+
+## Autenthication
+
+To use the package it is necessary to obtain the 'Genius' API access token. You can get one by visiting the following [link.](https://genius.com/signup_or_login) All the functions in this package require the `access_token` argument. You can pass it to each call manually, but our advice is to store it as an environment variable:
+
+```{r, eval=FALSE}
+Sys.setenv(GENIUS_API_TOKEN = 'GENIUS_TOKEN')
+```
+
+
+## Usage
+
+### Search Functions
+
+The functions in this package require either the Artist ID or the Song ID. For this reason, the first step will be to obtain these ID's. We achieve this with the `search_genius_artist` and` search_genius_song` functions.
+
+```{r example, warning=FALSE, message=FALSE}
+library(rgenius)
+
+search_genius_artist(artist_name = 'Arctic Monkeys') %>% kable()
+```
+
+<br>
+You can also get the ID of a song as follows:
+
+```{r}
+search_genius_song(song_name = 'Paradise') %>% tail(3) %>% kable()
+```
+
+<br>
+
+### Songs Information
+
+#### Media
+
+Information from digital media where a song appears can be obtained from the `get_song_media()` function. For example, let's see what we get for Coldplay's song 'Paradise' whose ID we got earlier:
+
+```{r}
+get_song_media(song_id = '55882') %>% kable()
+```
+
+Among the information obtained, we find the media that host this song and a direct link.
+
+<br>
+
+#### Producers
+
+Information from the song's music producers can be obtained as follows:
+
+```{r}
+get_song_producer_artist(song_id = '55882') %>% kable()
+```
+
+<br>
+
+#### Related Songs
+
+You can also search for songs related to the original:
+
+```{r}
+get_song_relationship(song_id = '55882') %>% head(5) %>% kable()
+```
+
+<br>
+
+### Lyrics
+
+Song lyrics can be obtained from the `get_genius_song_lyrics()` function. Lyrics can be returned either in table format (tibble) or in text format (character vector). 
+
+```{r}
+get_genius_song_lyrics(song_id = '154314', output = 'tibble') %>% head(5) %>% kable()
+```
+
+<br>
+```{r}
+get_genius_song_lyrics(song_id = '154314', output = 'text') %>% kable()
+```
+
+<br>
+
+#### Lyrics Discography
+
+You can download the lyrics of an entire discography with the `get_discography_lyrics()` function. This function uses parallel processing based on `foreach` package to increase performance. Use the different cores of your device to achieve this, so there may be noticeable differences in performance depending on the device.
+
+```{r}
+lyrics<-get_discography_lyrics(artist_id = '343657') #Leiva
+
+names(lyrics)
+```
+
+
+```{r}
+lyrics$`San Sebastian - Madrid` %>% kable()
+```
+
+
+<br>
+
+### Getting Help
+
+If you encounter a bug, please file an issue with a minimal reproducible example on [Issues](https://github.com/AlbertoAlmuinha/rgenius/issues). You can also make an inquiry if you wish.
+
+
+
+
+
+

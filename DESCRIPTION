@@ -1,0 +1,17 @@
+Package: rgenius
+Type: Package
+Date: 2020-05-02
+Title: Get 'Genius' API Lyrics
+Version: 0.1.0
+Author: Alberto Almuiña <albertogonzalezalmuinha@gmail.com>
+Maintainer: Alberto Almuiña <albertogonzalezalmuinha@gmail.com>
+Description: This package allows you to download the lyrics of your favorite songs in text and tibble. 
+    Also search for related songs or song information.
+    More information: <https://docs.genius.com/> .
+URL: https://github.com/AlbertoAlmuinha/rgenius
+BugReports: https://github.com/AlbertoAlmuinha/rgenius/issues
+Imports: dplyr, purrr, stringr, httr, rvest, foreach, tibble, parallel, doParallel
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
