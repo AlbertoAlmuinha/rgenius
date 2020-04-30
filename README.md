@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Travis build
+status](https://travis-ci.org/AlbertoAlmuinha/rgenius.svg?branch=master)](https://travis-ci.org/AlbertoAlmuinha/rgenius)
 <!-- badges: end -->
 
 > The purpose of this package is to provide an efficient method of

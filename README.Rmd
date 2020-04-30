@@ -24,6 +24,7 @@ Sys.setenv(GENIUS_API_TOKEN = 'j06gNlTF2KKmNyQjKW6gFrZe86dwUIKoML_ypqRNNRzyJl1fm
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Travis build status](https://travis-ci.org/AlbertoAlmuinha/rgenius.svg?branch=master)](https://travis-ci.org/AlbertoAlmuinha/rgenius)
 <!-- badges: end -->
 
 > The purpose of this package is to provide an efficient method of downloading song lyrics using the 'genius' API.
