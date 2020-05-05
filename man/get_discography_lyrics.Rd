@@ -4,11 +4,13 @@
 \alias{get_discography_lyrics}
 \title{Get Discography Lyrics}
 \usage{
-get_discography_lyrics(artist_id,
+get_discography_lyrics(artist_id, cores = detectCores(),
   access_token = Sys.getenv("GENIUS_API_TOKEN"))
 }
 \arguments{
 \item{artist_id}{Genius Artist ID}
+
+\item{cores}{Number of cores to use for parallel computing. Default: parallel::detectCores()}
 
 \item{access_token}{Genius Web API token. Defaults to Sys.getenv('GENIUS_API_TOKEN').}
 }

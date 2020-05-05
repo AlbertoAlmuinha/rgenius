@@ -1334,7 +1334,7 @@ different cores of your device to achieve this, so there may be
 noticeable differences in performance depending on the device.
 
 ``` r
-lyrics<-get_discography_lyrics(artist_id = '343657') #Leiva
+lyrics<-get_discography_lyrics(artist_id = '343657', cores = 2) #Leiva
 
 names(lyrics)
 #>  [1] "92"                                        

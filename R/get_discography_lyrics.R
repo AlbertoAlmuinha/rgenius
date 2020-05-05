@@ -3,6 +3,7 @@
 #' @description This function gets the lyrics of the desired song.
 #' @author Alberto Almuiña
 #' @param artist_id Genius Artist ID
+#' @param cores Number of cores to use for parallel computing. Default: parallel::detectCores()
 #' @param access_token Genius Web API token. Defaults to Sys.getenv('GENIUS_API_TOKEN').
 #' @return
 #' Returns a named list containing all the lyrics of the artist's songs.
@@ -16,12 +17,12 @@
 #' }
 
 
-get_discography_lyrics<-function(artist_id, access_token = Sys.getenv('GENIUS_API_TOKEN')){
+get_discography_lyrics<-function(artist_id, cores = detectCores(), access_token = Sys.getenv('GENIUS_API_TOKEN')){
 
   discography<-get_genius_artist_songs(artist_id = artist_id) %>% .[,c("id", "title", "lyrics_state")] %>%
     filter(lyrics_state == "complete")
 
-  cl<-makeCluster(detectCores())
+  cl<-makeCluster(cores)
 
   registerDoParallel(cl)
 

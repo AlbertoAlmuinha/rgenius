@@ -119,7 +119,7 @@ get_genius_song_lyrics(song_id = '154314', output = 'text') %>% kable()
 You can download the lyrics of an entire discography with the `get_discography_lyrics()` function. This function uses parallel processing based on `foreach` package to increase performance. Use the different cores of your device to achieve this, so there may be noticeable differences in performance depending on the device.
 
 ```{r}
-lyrics<-get_discography_lyrics(artist_id = '343657') #Leiva
+lyrics<-get_discography_lyrics(artist_id = '343657', cores = 2) #Leiva
 
 names(lyrics)
 ```
