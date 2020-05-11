@@ -13,7 +13,7 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' get_discography_lyrics('343657')
+#' get_discography_lyrics('343657', cores = 2)
 #' }
 
 

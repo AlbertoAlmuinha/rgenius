@@ -27,7 +27,7 @@ so there may be noticeable differences in performance depending on the device.
 }
 \examples{
 \dontrun{
-get_discography_lyrics('343657')
+get_discography_lyrics('343657', cores = 2)
 }
 }
 \author{

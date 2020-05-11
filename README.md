@@ -4,11 +4,12 @@
 # rgenius <img src='man/figures/logo.png' align="right" height="139" />
 
 <!-- badges: start -->
-
+[![CRAN status](https://www.r-pkg.org/badges/version/rgenius)](https://CRAN.R-project.org/package=rgenius)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.org/AlbertoAlmuinha/rgenius.svg?branch=master)](https://travis-ci.org/AlbertoAlmuinha/rgenius)
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rgenius?color=brightgreen)](https://cran.r-project.org/package=rgenius)
 <!-- badges: end -->
 
 > The purpose of this package is to provide an efficient method of
@@ -18,7 +19,13 @@ status](https://travis-ci.org/AlbertoAlmuinha/rgenius.svg?branch=master)](https:
 
 ## Installation
 
-You can install the development version of `rgenius` from
+You can install `rgenius` from CRAN:
+
+``` r
+install.packages('rgenius')
+```
+
+Or you can install the development version of `rgenius` from
 [Github](https://github.com/AlbertoAlmuinha/rgenius) with:
 
 ``` r
